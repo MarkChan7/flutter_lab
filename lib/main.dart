@@ -15,18 +15,21 @@ class RowAndColumnApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Row and Column'),
         ),
-        body: Column(
-          children: [
-            Row(children: [
-              Text('Row1 and Column1'),
-              Text('Row1 and Column2'),
-            ],),
-            Divider(),
-            Row(children: [
-              Text('Row2 and Column1'),
-              Text('Row2 and Column2'),
-            ],),
-          ],
+        body: Container(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Row(children: [
+                Text('Row1 and Column1'),
+                Text('Row1 and Column2'),
+              ],),
+              Divider(),
+              Row(children: [
+                Text('Row2 and Column1'),
+                Text('Row2 and Column2'),
+              ],),
+            ],
+          ),
         ),
       ),
     );
