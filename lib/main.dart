@@ -3,7 +3,34 @@ import 'package:english_words/english_words.dart';
 
 void main() {
   // runApp(MyApp());
-  runApp(HelloWorldApp());
+  runApp(RowAndColumnApp());
+}
+
+class RowAndColumnApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Row and Column',
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Row and Column'),
+        ),
+        body: Column(
+          children: [
+            Row(children: [
+              Text('Row1 and Column1'),
+              Text('Row1 and Column2'),
+            ],),
+            Divider(),
+            Row(children: [
+              Text('Row2 and Column1'),
+              Text('Row2 and Column2'),
+            ],),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 class HelloWorldApp extends StatelessWidget {
@@ -62,7 +89,8 @@ class _RandomWordsState extends State<RandomWords> {
         color: alreadySaved ? Colors.red : null,
       ),
       onTap: () {
-        setState(() { // 在Flutter的响应式风格的框架中，调用setState() 会为State对象触发build()方法，从而导致对UI的更新
+        setState(() {
+          // 在Flutter的响应式风格的框架中，调用setState() 会为State对象触发build()方法，从而导致对UI的更新
           if (alreadySaved) {
             _saved.remove(pair);
           } else {
